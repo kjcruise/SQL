@@ -1,0 +1,34 @@
+-- Create a plant store database
+
+CREATE TABLE plants (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO plants (name, price, quantity) VALUES 
+    ("Thai Monstera", 175, 3),
+    ("Snow Queen Pothos", 15, 6),
+    ("Varigated Philodendron", 20, 5),
+    ("Snake Plant", 12, 3),
+    ("Alocascia", 7.99, 5),
+    ("Fiddle Leaf Fig", 25, 3),
+    ("Succulent", 3, 30),
+    ("String of Pearls", 15, 5),
+    ("Hoya", 12, 7),
+    ("Sygonium Pink Perfection", 45, 2),
+    ("Monstera Obliqua", 95, 1),
+    ("Varigated Monstera Adansonii", 245, 1),
+    ("Varigated Philodendron Parasio Verde", 10, 6),
+    ("String of Hearts", 10,6),
+    ("Mini Monstera", 30, 7);
+    
+--display the database ordered by price. 
+SELECT * FROM plants
+  ORDER BY price desc; 
+
+--what is the average price of the full sun plants?
+SELECT AVG(price) AS full_sun_avg_price 
+  FROM plants
+  WHERE lighting="Full Sun";
+
+--which are the most expensive plants? 
+SELECT name, lighting, price FROM  plants
+  ORDER BY price DESC
+  LIMIT 5;
