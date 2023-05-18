@@ -25,11 +25,16 @@ INSERT INTO authors (name, book, release_year) VALUES ("Gail Honeyman", "Eleanor
 INSERT INTO authors (name, book, release_year) VALUES ("Erin Morgenstern", "Night Circus", 2011);
 INSERT INTO authors (name, book, release_year) VALUES ("Adam Kay", "This is Going to Hurt", 2017);
 
+--Which books were released before 2012 and who was the author?--
+SELECT name AS author, release_year FROM authors
+    WHERE release_year < 2012
+    ORDER BY release_year ASC;
+    
+--Are there books that were released the same year as The Fault in Our Stars?--
+SELECT book, name, release_year FROM authors
+    WHERE release_year = (SELECT release_year FROM authors WHERE     book = "The Fault in Our Stars");
 
-
-
-
-
+    
 
 
 
@@ -60,9 +65,11 @@ INSERT INTO singers (name, famous_song, home_state) VALUES ("Maroon 5", "Moves L
 INSERT INTO singers (name, famous_song, home_state) VALUES ("Kanye West", "Gold Digger", "Georgia");
 
 
-
-
-
+--Are there singers that are from the same area?--
+SELECT home_state, GROUP_CONCAT(name) AS singers_name
+FROM singers
+GROUP BY home_state
+HAVING COUNT(*) > 1;
 
 
 
@@ -93,11 +100,15 @@ INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Ni
 INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Javier Bardmen", 54, "Male", "Actor", "Skyfall");
 INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Judi Dench", 88, "Female", "Actress", "Skyfall");
 
+--Can you pair together the names of those who won an award for the same movie?--
+SELECT a.name, b.name FROM oscar_winners a
+    JOIN oscar_winners b 
+    ON a.movie_title = b.movie_title
+WHERE a.name <> b.name;
 
 
-
-
-
-
-
+--From this list, which of the gender categories has won the most awards?--
+SELECT gender, COUNT(*) AS num_awards FROM oscar_winners
+    GROUP BY gender
+    ORDER BY num_awards DESC;
 
