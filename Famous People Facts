@@ -66,10 +66,9 @@ INSERT INTO singers (name, famous_song, home_state) VALUES ("Kanye West", "Gold 
 
 
 --Are there singers that are from the same area?--
-SELECT home_state, GROUP_CONCAT(name) AS singers_name
-FROM singers
-GROUP BY home_state
-HAVING COUNT(*) > 1;
+SELECT home_state, GROUP_CONCAT(name) AS singers_name FROM singers
+    GROUP BY home_state
+    HAVING COUNT(*) > 1;
 
 
 
