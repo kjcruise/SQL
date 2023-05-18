@@ -1,0 +1,103 @@
+--In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.--
+
+
+--Authors: What books did they write?--
+CREATE TABLE authors (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, book TEXT, release_year INTEGER);
+
+INSERT INTO authors (name, book, release_year) VALUES ("Anthony Doerr", "All the Light We Cannot See", 2014);
+INSERT INTO authors (name, book, release_year) VALUES ("John Green", "The Fault in Our Stars", 2012);
+INSERT INTO authors (name, book, release_year) VALUES ("Yann Martel", "Life of Pi", 2001);
+INSERT INTO authors (name, book, release_year) VALUES ("Kathryn Stockett", "The Help", 2009);
+INSERT INTO authors (name, book, release_year) VALUES ("Jojo Moyes", "Me Before You", 2012);
+INSERT INTO authors (name, book, release_year) VALUES ("David Benioff", "City of Thieves", 2008);
+INSERT INTO authors (name, book, release_year) VALUES ("Margaret Atwood", "The Testaments", 2019);
+INSERT INTO authors (name, book, release_year) VALUES ("Madeline Miller", "Circle", 2018);
+INSERT INTO authors (name, book, release_year) VALUES ("Andy Weir", "The Martian", 2011);
+INSERT INTO authors (name, book, release_year) VALUES ("Donna Tartt", "The Goldfinch", 2013);
+INSERT INTO authors (name, book, release_year) VALUES ("Paul Hawkins", "The Girl on the Train", 2015);
+INSERT INTO authors (name, book, release_year) VALUES ("Delia Owens", "Where the Crawdads Sing", 2018);
+INSERT INTO authors (name, book, release_year) VALUES ("Ernest Cline", "Ready Player One", 2011);
+INSERT INTO authors (name, book, release_year) VALUES ("Eowyn Ivey", "The Snow Child", 2012);
+INSERT INTO authors (name, book, release_year) VALUES ("Colleen Hoover", "It Ends With Us", 2016);
+INSERT INTO authors (name, book, release_year) VALUES ("Gillian Flynn", "Gone Girl", 2012);
+INSERT INTO authors (name, book, release_year) VALUES ("Sally Rooney", "Normal People", 2018);
+INSERT INTO authors (name, book, release_year) VALUES ("Gail Honeyman", "Eleanor Oliphant", 2017);
+INSERT INTO authors (name, book, release_year) VALUES ("Erin Morgenstern", "Night Circus", 2011);
+INSERT INTO authors (name, book, release_year) VALUES ("Adam Kay", "This is Going to Hurt", 2017);
+
+
+
+
+
+
+
+
+
+
+
+--Singers: What songs did they write? Where are they from?--
+CREATE TABLE singers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, famous_song TEXT, home_state TEXT);
+
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Billie Eilish", "Ocean Eyes", "California");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Justin Bieber", "Never Say Never", "Canada");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Selena Gomez", "Love you like a Love Song", "Texas");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Post Malone", "Circles", "New York");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Usher", "Yeah!", "Texas");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Rihanna", "We Found Love", "Barbados");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Dua Lipa", "Levitating", "United Kingdom");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Adele", "Rolling in the Deep", "United Kingdom");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Lil Nas X", "Old Town Road", "Georgia");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Marvin Gaye", "Let's Get It On", "Washington D.C.");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Ed Sheeran", "Perfect", "United Kingdom"); 
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Alicia Keys", "No One", "New York");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Ke$ha", "Tik Tok", "California");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Drake", "God's Plan", "Canada");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Pharrell Williams", "Happy", "Virginia");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Bruno Mars", "Just the Way You Are", "Hawaii");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Michael Jackson", "Billie Jean", "Indiana");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Shania Twain", "You're Still the One", "Canada");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Maroon 5", "Moves Like Jagger", "California");
+INSERT INTO singers (name, famous_song, home_state) VALUES ("Kanye West", "Gold Digger", "Georgia");
+
+
+
+
+
+
+
+
+
+
+
+--Movie stars: What movies are they in and did they win an award?--
+CREATE TABLE oscar_winners (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, gender TEXT, category TEXT, movie_title TEXT);
+
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Meryl Streep", 73, "Female", "Actress", "Out of Africa");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Emma Thompson", 64, "Female", "Actress", "Sense and Sensibility");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Charlize Theron", 47, "Female", "Producer", "Monster");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Julie Andrews", 87, "Female", "Actress", "Sound of Music");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Jack Nicholson", 86, "Male", "Actor", "Chinatown");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Tom Hanks", 66, "Male", "Producer", "Cast Away");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Colin Firth", 62, "Male", "Actor", "A Single Man");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Michael Caine", 90, "Male", "Actor", "The Dark Knight");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Leonardo DiCaprio", 48, "Male", "Actor", "Inception");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Cate Blanchett", 54, "Female", "Actress", "Carol");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Anne Hathaway", 40, "Female", "Actress", "Les Miserables");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Maggie Smith", 88, "Female", "Actress", "Gosford Park");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Julia Roberts", 55, "Female", "Actress", "Pretty Woman");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Reese Witherspoon", 47, "Female", "Producer", "Wild");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Natalie Portman", 41, "Female", "Actress", "Black Swan");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Russel Crowe", 59, "Male", "Actor", "Les Miserables");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Jim Broadbent", 73, "Male", "Actor", "Moulin Rouge!");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Nicole Kidman", 55, "Female", "Actress", "Moulin Rouge!");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Javier Bardmen", 54, "Male", "Actor", "Skyfall");
+INSERT INTO oscar_winners (name, age, gender, category, movie_title) VALUES ("Judi Dench", 88, "Female", "Actress", "Skyfall");
+
+
+
+
+
+
+
+
+
