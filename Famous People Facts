@@ -32,7 +32,7 @@ SELECT name AS author, release_year FROM authors
     
 --Are there books that were released the same year as The Fault in Our Stars?--
 SELECT book, name, release_year FROM authors
-    WHERE release_year = (SELECT release_year FROM authors WHERE     book = "The Fault in Our Stars");
+    WHERE release_year = (SELECT release_year FROM authors WHERE book = "The Fault in Our Stars");
 
     
 
