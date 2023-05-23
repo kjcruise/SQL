@@ -2,6 +2,8 @@
 # Then, I performed analytics on the data using SQL. 
 
 # 1. Show Customers (their full names, customer ID, and country) who are not in the US.
+SELECT FirstName, LastName, CustomerId, Country FROM chinook.customers
+    WHERE Country <> "USA"
 
 # 2. Show only the Customers from Brazil.
 
