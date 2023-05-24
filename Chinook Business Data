@@ -47,6 +47,9 @@ SELECT SUM(Total) AS Total_Sales_in_2009
     WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
 # 10. Write a query that includes the purchased track name with each invoice line ID.
+SELECT tracks.Name, inv.InvoiceLineId FROM chinook.invoice_items AS inv 
+    LEFT JOIN chinook.tracks AS tracks
+    ON inv.TrackId = tracks.TrackId;
 
 # 11. Write a query that includes the purchased track name AND artist name with each invoice line ID.
 
