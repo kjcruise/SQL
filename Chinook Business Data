@@ -52,6 +52,16 @@ SELECT tracks.Name, inv.InvoiceLineId FROM chinook.invoice_items AS inv
     ON inv.TrackId = tracks.TrackId;
 
 # 11. Write a query that includes the purchased track name AND artist name with each invoice line ID.
+SELECT tracks.Name AS TrackName, 
+        artists.Name AS ArtistName, 
+        inv.InvoiceLineId 
+FROM chinook.invoice_items AS inv 
+    LEFT JOIN chinook.tracks AS tracks
+    ON inv.TrackId = tracks.TrackId
+    INNER JOIN chinook.albums AS albums
+    ON tracks.AlbumId = albums.AlbumId
+    LEFT JOIN chinook.artists AS artists
+    ON albums.ArtistId = artists.ArtistId;
 
 # 12. Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 
