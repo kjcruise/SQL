@@ -37,6 +37,9 @@ SELECT employ.FirstName AS Employ_FirstName, employ.LastName AS Employ_LastName,
     WHERE employ.Title = "Sales Support Agent";
     
 # 8. How many Invoices were there in 2009?
+SELECT COUNT(*) AS Total_Invoices_in_2009
+    FROM chinook.Invoices
+    WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
 # 9. What are the total sales for 2009?
 
