@@ -42,6 +42,9 @@ SELECT COUNT(*) AS Total_Invoices_in_2009
     WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
 # 9. What are the total sales for 2009?
+SELECT SUM(Total) AS Total_Sales_in_2009
+    FROM chinook.Invoices
+    WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
 # 10. Write a query that includes the purchased track name with each invoice line ID.
 
